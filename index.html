@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRUDO — Edición limitada. Cuando se agota, no vuelve.</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="page">
+
+<header class="cw-header">
+  <div class="cw-head">
+    <a href="#" class="cw-logo cw-logo--nav" data-go="home" aria-label="CRUDO"><img src="assets/logo-hueso.png" alt="CRUDO"></a>
+    <nav class="cw-nav" id="nav"></nav>
+    <button class="cr-nav__cart cw-cart" id="open-cart"><span>Carrito (<span id="cart-count">0</span>)</span><span class="cr-nav__dot" id="cart-dot" hidden></span></button>
+    <button class="cw-burger" id="burger" aria-label="Menú" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- HOME -->
+<main id="view-home">
+  <section class="cw-hero">
+    <div class="cw-hero__img"></div>
+    <div class="cw-abs" style="background:var(--overlay-hero)"></div>
+    <div style="position:absolute;left:0;right:0;top:0;height:140px;background:linear-gradient(180deg,#0E0E0E 0,#0E0E0E 55%,rgba(14,14,14,0) 100%)"></div>
+    <div class="cw-abs" style="background:linear-gradient(0deg,rgba(14,14,14,.96) 0%,rgba(14,14,14,.6) 35%,rgba(14,14,14,0) 65%)"></div>
+    <div class="cw-col" style="position:relative;width:100%;max-width:var(--page-max);margin:0 auto;padding:48px var(--page-gutter) 72px;gap:24px;align-items:flex-start">
+      <h1 class="t-hero" style="margin:0;font-size:clamp(88px,13vw,184px)">Nuevo<br>drop</h1>
+      <div class="t-mono" style="font-size:18px;line-height:1.5"><span style="color:var(--crudo-volt)">Edición limitada.</span><br>Cuando se agota, no vuelve.</div>
+      <button class="cr-btn cr-btn--primary cr-btn--lg" data-go="shop">Ver drops</button>
+    </div>
+    <div class="t-mono" style="position:absolute;left:var(--page-gutter);bottom:24px;font-size:16px">DROP_01 <span style="color:var(--crudo-volt)">/</span> 25</div>
+  </section>
+
+  <div style="background:var(--crudo-volt);color:var(--crudo-negro);overflow:hidden;white-space:nowrap;padding:12px 0" aria-hidden="true">
+    <div id="ticker" style="display:inline-block;animation:crudo-marquee 28s linear infinite;font-family:var(--font-display);font-size:28px;letter-spacing:.04em;text-transform:uppercase;line-height:1"></div>
+  </div>
+
+  <section id="drops" class="cw-wrap cw-col" style="padding-top:var(--sp-9);padding-bottom:var(--sp-9);gap:var(--sp-7)">
+    <div class="cw-sec-head">
+      <div class="cw-col" style="gap:12px">
+        <div><span class="cr-badge cr-badge--alert"><span class="cr-badge__dot"></span>Drop_01 en vivo</span></div>
+        <h2 class="t-h1" style="margin:0;font-size:clamp(48px,7vw,80px)">Lo que hay hoy</h2>
+        <span class="t-mono" style="color:var(--fg-2)">Puede no estar mañana.</span>
+      </div>
+      <button class="cr-btn cr-btn--ghost" data-go="shop">Ver todo el shop <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="cw-grid" id="home-grid"></div>
+  </section>
+
+  <section class="cw-manifesto">
+    <div class="cw-abs" style="background:url(assets/lifestyle-calle.png) center/cover no-repeat"></div>
+    <div class="cw-abs" style="background:linear-gradient(0deg,rgba(14,14,14,.95) 0%,rgba(14,14,14,.55) 45%,rgba(14,14,14,.15) 100%)"></div>
+    <div class="cw-col" style="position:relative;width:100%;max-width:var(--page-max);margin:0 auto;padding:var(--sp-9) var(--page-gutter) var(--sp-8);gap:24px">
+      <h2 class="t-display" style="margin:0;font-size:clamp(56px,10vw,144px)">Sin filtro.<br>Sin poses.<br><span style="color:var(--crudo-volt)">Sin vueltas.</span></h2>
+      <p class="t-mono" style="margin:0;max-width:520px">Tiradas cortas. Cuando se agota, no vuelve. Vestite como sos.</p>
+    </div>
+  </section>
+
+  <section id="nosotros" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));background:var(--bg-surface)">
+    <div class="cw-about-img" style="background:url(assets/textura-tela.png) center/cover"></div>
+    <div class="cw-col" style="padding:var(--sp-9) var(--page-gutter);gap:24px;justify-content:center">
+      <span class="t-label" style="color:var(--crudo-volt)">01 / La marca</span>
+      <h2 class="t-display" style="margin:0;font-size:clamp(56px,7vw,88px)">Quiénes<br>somos</h2>
+      <p class="t-body-lg" style="margin:0;max-width:480px">CRUDO es ropa para los que no piden permiso. Buzos, remeras y gorras en tiradas cortas, hechas desde la calle y para la calle.</p>
+      <p class="t-body-lg" style="margin:0;max-width:480px">Actitud. Autenticidad. Escasez. Cada prenda sale numerada y no se repite.</p>
+      <p class="t-mono" style="margin:0;color:var(--fg-2)">Si no incomoda un poco, no es CRUDO.</p>
+    </div>
+  </section>
+</main>
+
+<!-- SHOP -->
+<main id="view-shop" class="cw-wrap cw-col" hidden style="padding-top:var(--sp-8);padding-bottom:var(--sp-9);gap:var(--sp-7)">
+  <div class="cw-sec-head">
+    <div class="cw-col" style="gap:12px">
+      <span class="t-label" style="color:var(--crudo-volt)">DROP_01 / <span id="shop-count">0</span> prendas</span>
+      <h1 class="t-display" style="margin:0;font-size:clamp(64px,10vw,120px)">Shop</h1>
+    </div>
+    <div style="max-width:100%;overflow-x:auto"><div class="cr-tabs" role="tablist" id="tabs"></div></div>
+  </div>
+  <div class="cw-grid" id="shop-grid"></div>
+  <p class="t-mono" id="shop-empty" hidden style="margin:0;color:var(--fg-2)">Nada de esto por ahora. Lo que se va, no vuelve.</p>
+</main>
+
+<!-- PRODUCT -->
+<main id="view-product" class="cw-wrap cw-col" hidden style="padding-top:var(--sp-7);padding-bottom:var(--sp-9);gap:var(--sp-9)">
+  <div class="cw-prod-grid">
+    <div id="p-img" role="img" style="aspect-ratio:4/5;background:var(--bg-surface) center/cover no-repeat"></div>
+    <div class="cw-col" style="gap:var(--sp-5);align-self:center;min-width:0">
+      <a href="#" class="t-label" data-go="shop" style="color:var(--fg-2)">← Volver al shop</a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="cr-badge cr-badge--volt" id="p-badge"></span><span class="cr-badge cr-badge--outline" id="p-drop"></span></div>
+      <h1 class="t-display" id="p-name" style="margin:0;font-size:clamp(56px,8vw,96px)"></h1>
+      <div class="t-mono" id="p-price" style="font-size:22px"></div>
+      <p class="t-body" id="p-desc" style="margin:0;max-width:460px"></p>
+      <div id="p-stock-wrap" class="cw-col" style="gap:10px;max-width:460px">
+        <div class="t-mono" style="display:flex;justify-content:space-between;color:var(--fg-2)"><span>Quedan</span><span id="p-stock" style="color:var(--crudo-volt)"></span></div>
+        <div style="height:4px;background:var(--crudo-asfalto-2)"><div id="p-bar" style="height:100%;background:var(--crudo-volt)"></div></div>
+      </div>
+      <div id="p-sizes-wrap" class="cw-col" style="gap:10px">
+        <span class="t-label" style="color:var(--fg-2)">Talle</span>
+        <div id="p-sizes" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      </div>
+      <button class="cr-btn cr-btn--primary cr-btn--lg cr-btn--full" id="p-add"></button>
+    </div>
+  </div>
+  <div class="cw-col" style="gap:var(--sp-6)">
+    <h2 class="t-h1" style="margin:0;font-size:clamp(40px,5vw,56px)">Más del drop</h2>
+    <div class="cw-grid" id="p-others"></div>
+  </div>
+</main>
+
+<footer id="contacto" style="border-top:1px solid var(--border-1);margin-top:var(--sp-8)">
+  <div class="cw-col" style="max-width:var(--page-max);margin:0 auto;padding:var(--sp-8) var(--page-gutter) var(--sp-6);gap:var(--sp-8)">
+    <div style="background:var(--bg-surface);padding:clamp(24px,4vw,56px);display:flex;justify-content:space-between;gap:32px 48px;flex-wrap:wrap;align-items:flex-end;border-left:4px solid var(--crudo-volt)">
+      <div class="cw-col" style="gap:12px;flex:1 1 320px">
+        <span class="t-label" style="color:var(--crudo-volt)">Próximo drop</span>
+        <h2 class="t-h1" style="margin:0;font-size:clamp(40px,5.5vw,68px)">No te quedes afuera</h2>
+        <span class="t-mono" style="color:var(--fg-2)">Avisamos por mail antes que a nadie.</span>
+      </div>
+      <form id="sub" style="display:flex;gap:12px;align-items:flex-end;flex:1 1 360px;max-width:520px" novalidate>
+        <div class="cr-field" style="flex:1;min-width:0"><label class="cr-label" for="email">Mail</label><input class="cr-input" id="email" type="email" placeholder="vos@calle.com"></div>
+        <button class="cr-btn cr-btn--primary" type="submit">Avisame</button>
+      </form>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:var(--sp-7) var(--sp-6)">
+      <div class="cw-col" style="grid-column:span 2;min-width:min(100%,260px);gap:20px;align-items:flex-start">
+        <a href="#" class="cw-logo cw-logo--lg" data-go="home" aria-label="CRUDO"><img src="assets/logo-volt.png" alt="CRUDO"></a>
+        <p class="t-body" style="margin:0;max-width:340px;color:var(--fg-2)">Ropa para los que no piden permiso. Tiradas cortas, numeradas. Cuando se agota, no vuelve.</p>
+        <span class="t-mono" style="color:var(--crudo-volt)">DROP_01 / 25</span>
+      </div>
+      <div class="cw-col" style="gap:14px;align-items:flex-start"><span class="t-label" style="color:var(--fg-2)">Shop</span><div class="cw-col" style="gap:14px" id="foot-shop"></div></div>
+      <div class="cw-col" style="gap:14px;align-items:flex-start"><span class="t-label" style="color:var(--fg-2)">Marca</span><div class="cw-col" style="gap:14px" id="foot-brand"></div></div>
+      <div class="cw-col" style="gap:14px;align-items:flex-start">
+        <span class="t-label" style="color:var(--fg-2)">Seguinos</span>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="t-mono cw-foot-link">Instagram ↗</a>
+        <span class="t-mono" style="color:var(--fg-2);font-size:14px">Los drops salen primero ahí.</span>
+      </div>
+    </div>
+    <div class="t-label" style="display:flex;justify-content:space-between;gap:12px 32px;flex-wrap:wrap;color:var(--fg-2);border-top:1px solid var(--border-1);padding-top:var(--sp-5)">
+      <span>© CRUDO 2026</span><span>Tirada limitada / No vuelve</span>
+      <a href="#" id="to-top" style="color:var(--fg-2)">Volver arriba ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="cr-overlay" id="cart" hidden>
+  <aside id="cart-panel" style="width:min(440px,100%);background:var(--bg-surface);border-left:2px solid var(--fg-1);padding:32px;display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline"><h2 class="t-h1" style="margin:0;font-size:48px">Carrito (<span id="cart-count2">0</span>)</h2><button id="close-cart" aria-label="Cerrar" style="background:none;border:0;color:var(--fg-2);font-size:24px;cursor:pointer">×</button></div>
+    <div id="cart-items" class="cw-col" style="flex:1;gap:16px;overflow:auto"></div>
+    <div class="t-mono" style="display:flex;justify-content:space-between"><span>Total</span><span id="cart-total" style="font-size:20px"></span></div>
+    <button class="cr-btn cr-btn--primary cr-btn--lg cr-btn--full" id="pay">Ir a pagar <span aria-hidden="true">→</span></button>
+  </aside>
+</div>
+
+<div class="cw-toast" id="toast" hidden><div><div class="cr-toast" role="status"><span class="cr-toast__msg" id="toast-msg"></span><button class="cr-toast__x" id="toast-x" aria-label="Cerrar">×</button></div></div></div>
+
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
